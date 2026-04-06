@@ -882,7 +882,7 @@ function create_tp_section(name, order)
 		clicksfx:Play()
 	end)
 	title.MouseButton1Click:Connect(function()
-		--ReplicatedStorage.events.player.char.changezone:FireServer("nn_" .. title.Text)
+		ReplicatedStorage.events.player.char.changezone:FireServer("nn_" .. title.Text)
 		player.Team = game.Teams:WaitForChild("nn_" .. title.Text)
 	end)
 end
@@ -913,7 +913,7 @@ for map,mtable in ipairs(TPTable) do
 		label.TextSize = 24
 		label.TextTransparency = .25
 		image.MouseButton1Click:Connect(function()
-			--[[if image.Parent.Name ~= 'oob' or image.Parent.name ~= 'players' then
+			if image.Parent.Name ~= 'oob' or image.Parent.name ~= 'players' then
 				ReplicatedStorage.events.player.char.changezone:FireServer("nn_" .. image.Parent.Name)
 			end]]
        local thint = hintModule.new("teleported to " .. image.TextLabel.Text)
